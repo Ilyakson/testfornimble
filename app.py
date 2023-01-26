@@ -6,10 +6,11 @@ from flask import (
 from flask_bootstrap import Bootstrap
 from filters import datetimeformat, file_type
 from resources import get_bucket
+from config import FLASK_SECRET_KEY
 
 app = Flask(__name__)
 Bootstrap(app)
-app.secret_key = "secret"
+app.secret_key = FLASK_SECRET_KEY
 app.jinja_env.filters["datetimeformat"] = datetimeformat
 app.jinja_env.filters["file_type"] = file_type
 

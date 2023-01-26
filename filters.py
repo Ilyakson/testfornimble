@@ -3,7 +3,7 @@ import mimetypes
 import arrow
 
 
-additional_file_types = {".md": "text/markdown"}
+ADDITIONAL_FILE_TYPES = {".md": "text/markdown"}
 
 
 def datetimeformat(date_str):
@@ -21,7 +21,7 @@ def file_type(key):
         if file_info[0].startswith(".") and file_extension == "":
             filetype = "text"
 
-        if file_extension in additional_file_types.keys():
-            filetype = additional_file_types[file_extension]
+        if file_extension in ADDITIONAL_FILE_TYPES.keys():
+            filetype = ADDITIONAL_FILE_TYPES[file_extension]
 
         return filetype
